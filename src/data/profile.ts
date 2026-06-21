@@ -1,0 +1,403 @@
+export type Chapter = {
+  id: string;
+  number: string;
+  label: string;
+  href: string;
+};
+
+export type Experience = {
+  period: string;
+  role: string;
+  company: string;
+  location: string;
+  logo?: string;
+  highlights: string[];
+  stack: string[];
+  accent: string;
+};
+
+export type Project = {
+  id: string;
+  chapter: string;
+  title: string;
+  subtitle: string;
+  context: string;
+  description: string;
+  role: string;
+  stack: string[];
+  links: { label: string; href: string }[];
+  images: string[];
+  logo?: string;
+  accent: string;
+  gallery?: "wide" | "mobile";
+  imageLabels?: string[];
+};
+
+export type Certification = {
+  title: string;
+  issuer: string;
+  date?: string;
+  verifyUrl?: string;
+  file: string;
+};
+
+export type Education = {
+  period: string;
+  degree: string;
+  school: string;
+  location: string;
+};
+
+export const profile = {
+  name: "Nassima Mesbah",
+  shortName: "Nassima",
+  title: "Ingénieure d'État — Génie Logiciel",
+  role: "Développeuse Full Stack · Web & Mobile",
+  email: "mesbahnassima0@gmail.com",
+  phone: "+212 6 97 89 75 16",
+  github: "https://github.com/Nassimames",
+  location: "Casablanca, Maroc",
+  cvPath: "/assets/cv/Nassima-MESBAH-CV.pdf",
+  avatarPath: "/assets/profile/avatar.png",
+  tagline:
+    "Je construis des produits digitaux exigeants — du marketplace marocain à l'écosystème hospitalier.",
+  bio: [
+    "Ingénieure d'État en Génie Logiciel, diplômée de l'UIR (Université Internationale de Rabat). Maîtrise avancée des stacks modernes Next.js, React et Flutter, orientée résultats et habituée aux environnements exigeants.",
+    "De l'analyse de sentiments chez ISWY Consulting au système hospitalier GAD-H à l'Hôpital Universitaire International de Rabat, en passant par l'app Mooster au TechCenter UIR et l'écosystème GoBeldi — chaque chapitre de mon parcours m'a appris à penser produit, pas seulement code.",
+  ],
+  languages: [
+    { lang: "Arabe", level: "Langue maternelle" },
+    { lang: "Français", level: "Courant" },
+    { lang: "Anglais", level: "Professionnel" },
+  ],
+  interests: [
+    "Écriture de drame & introspection",
+    "Lecture fantastique",
+    "Crochet & face painting",
+    "Cuisine marocaine & internationale",
+  ],
+};
+
+export const chapters: Chapter[] = [
+  { id: "cover", number: "00", label: "Couverture", href: "#cover" },
+  { id: "profil", number: "01", label: "Profil", href: "#profil" },
+  { id: "parcours", number: "02", label: "Parcours", href: "#parcours" },
+  { id: "projets", number: "03", label: "Projets", href: "#projets" },
+  { id: "certifs", number: "04", label: "Certifications", href: "#certifs" },
+  { id: "stack", number: "05", label: "Stack", href: "#stack" },
+  { id: "contact", number: "06", label: "Contact", href: "#contact" },
+];
+
+export const education: Education[] = [
+  {
+    period: "2023 – 2025",
+    degree: "Diplôme d'Ingénieure d'État en Génie Logiciel",
+    school: "UIR — École Supérieure d'Informatique et du Numérique",
+    location: "Rabat, Maroc",
+  },
+  {
+    period: "2022 – 2023",
+    degree: "Licence Professionnelle — Informatique & Mathématiques Appliquées",
+    school: "Faculté Polydisciplinaire de Sidi Bennour",
+    location: "Sidi Bennour, Maroc",
+  },
+  {
+    period: "2019 – 2020",
+    degree: "Baccalauréat Scientifique (Sciences Physiques)",
+    school: "2ème Lycée Militaire Royal Ifrane",
+    location: "Ifrane, Maroc",
+  },
+];
+
+export const experiences: Experience[] = [
+  {
+    period: "Jan. 2026 – Juin 2026",
+    role: "Développeuse Full Stack",
+    company: "GoBeldi",
+    location: "Casablanca",
+    logo: "/assets/logos/gobeldi.png",
+    highlights: [
+      "Développement from scratch de Gobeldi.com — marketplace e-commerce haute performance",
+      "Écosystème SaaS MyShop, Admin & App mobile — maintenance évolutive et mises à jour majeures",
+      "Intégration OpenAI, dashboards analytiques Recharts, monitoring Sentry, FCM Firebase",
+      "CI/CD Vercel, tests Vitest, i18n multilingue et paiements sécurisés",
+    ],
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Supabase",
+      "Flutter",
+      "Tailwind v4",
+      "OpenAI",
+      "Firebase",
+      "Vercel",
+    ],
+    accent: "#E8531A",
+  },
+  {
+    period: "Fév. – Juin 2025",
+    role: "Stage PFE — Développeuse Full Stack",
+    company: "HUIR — Hôpital Universitaire International de Rabat",
+    location: "Rabat",
+    logo: "/assets/logos/huir.jfif",
+    highlights: [
+      "Conception & développement de GAD-H — système centralisé d'affichage dynamique hospitalier",
+      "Analyse des besoins, modélisation UML, coordination pluridisciplinaire",
+      "Front-end React + back-end Spring Boot avec WebSocket temps réel",
+    ],
+    stack: ["React", "Spring Boot", "Java", "TypeScript", "MySQL", "WebSocket"],
+    accent: "#1B5E3B",
+  },
+  {
+    period: "Avr. – Juin 2024",
+    role: "Stage — Développeuse Front-end Mobile",
+    company: "TechCenter UIR",
+    location: "Rabat",
+    logo: "/assets/logos/uir.png",
+    highlights: [
+      "Développement complet du front-end de Mooster — app mobile de gestion de bétail",
+      "Collaboration avec designers, gestion du code via GitHub",
+    ],
+    stack: ["Flutter", "Figma", "Android Studio", "Dart"],
+    accent: "#003DA5",
+  },
+  {
+    period: "Avr. – Juil. 2023",
+    role: "Stage — Data Analyst",
+    company: "ISWY Consulting",
+    location: "Maroc",
+    logo: "/assets/logos/iswy.jfif",
+    highlights: [
+      "Analyse de sentiments sur données Twitter (COVID-19)",
+      "Préparation des données, modèles ML et visualisation des résultats",
+    ],
+    stack: ["Python", "Pandas", "NLTK", "Matplotlib"],
+    accent: "#6B4C9A",
+  },
+];
+
+export const projects: Project[] = [
+  {
+    id: "gobeldi-platform",
+    chapter: "03.1",
+    title: "GoBeldi Platform",
+    subtitle: "Marketplace e-commerce marocain",
+    context: "GoBeldi · Casablanca · 2026",
+    role: "Développeuse Full Stack",
+    description:
+      "Plateforme e-commerce from scratch connectant artisans marocains et acheteurs internationaux. Multilingue (FR/AR/EN), paiements CashPlus, recherche avancée et expérience mobile-first.",
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Supabase",
+      "Tailwind v4",
+      "TanStack Query",
+      "Zustand",
+    ],
+    links: [{ label: "gobeldi.com", href: "https://www.gobeldi.com/fr" }],
+    logo: "/assets/logos/gobeldi.png",
+    images: [
+      "/assets/projects/gobeldi-platform/Capture1.PNG",
+      "/assets/projects/gobeldi-platform/Capture2.PNG",
+      "/assets/projects/gobeldi-platform/Capture3.PNG",
+      "/assets/projects/gobeldi-platform/Capture4.PNG",
+      "/assets/projects/gobeldi-platform/Capture5.PNG",
+    ],
+    accent: "#E8531A",
+    gallery: "wide",
+  },
+  {
+    id: "myshop",
+    chapter: "03.2",
+    title: "MyShop & Admin GoBeldi",
+    subtitle: "Espace marchands + portail administrateur",
+    context: "GoBeldi · 2026",
+    role: "Développeuse Full Stack",
+    description:
+      "Deux interfaces complémentaires : MyShop pour les vendeurs (gestion boutiques, catalogues, commandes) et le portail Admin Gobeldi (analytics, intégration OpenAI, export PDF).",
+    stack: ["Next.js", "React", "Supabase", "Recharts", "OpenAI API"],
+    links: [{ label: "myshop.gobeldi.com", href: "https://myshop.gobeldi.com/fr" }],
+    logo: "/assets/logos/gobeldi.png",
+    images: [
+      "/assets/projects/myshop/Capture.PNG",
+      "/assets/projects/myshop/Capture admin.PNG",
+    ],
+    imageLabels: ["MyShop — Espace marchands", "Admin — Portail administrateur"],
+    accent: "#C44A12",
+    gallery: "wide",
+  },
+  {
+    id: "gobeldi-mobile",
+    chapter: "03.3",
+    title: "GoBeldi Mobile",
+    subtitle: "Application Android · 10K+ téléchargements",
+    context: "GoBeldi · Flutter · 2026",
+    role: "Développeuse Mobile",
+    description:
+      "App de shopping avec recherche, filtres, favoris, suivi de commandes et notifications push Firebase en temps réel. Auth sociale, deep linking et optimisation GetX.",
+    stack: ["Flutter", "GetX", "Firebase FCM", "Dio", "Deep Linking"],
+    links: [
+      {
+        label: "Play Store",
+        href: "https://play.google.com/store/apps/details?id=com.gobeldi.app",
+      },
+    ],
+    logo: "/assets/logos/gobeldi.png",
+    images: [
+      "/assets/projects/gobeldi-mobile/WhatsApp Image 2026-06-20 at 12.46.02 (5).jpeg",
+      "/assets/projects/gobeldi-mobile/WhatsApp Image 2026-06-20 at 12.46.02 (3).jpeg",
+      "/assets/projects/gobeldi-mobile/WhatsApp Image 2026-06-20 at 12.46.02 (4).jpeg",
+      "/assets/projects/gobeldi-mobile/WhatsApp Image 2026-06-20 at 12.46.02 (2).jpeg",
+      "/assets/projects/gobeldi-mobile/WhatsApp Image 2026-06-20 at 12.46.02 (1).jpeg",
+      "/assets/projects/gobeldi-mobile/WhatsApp Image 2026-06-20 at 12.46.02.jpeg",
+    ],
+    imageLabels: [
+      "Accueil & catalogue",
+      "Recherche & filtres",
+      "Mes commandes",
+      "Connexion",
+      "Profil",
+      "Notifications push",
+    ],
+    accent: "#FF6B2C",
+    gallery: "mobile",
+  },
+  {
+    id: "gad-h",
+    chapter: "03.4",
+    title: "GAD-H / HUIR",
+    subtitle: "Système d'affichage dynamique hospitalier",
+    context: "HUIR · Stage PFE · 2025",
+    role: "Développeuse Full Stack",
+    description:
+      "Système centralisé de gestion et d'affichage dynamique pour l'Hôpital Universitaire International de Rabat. Paramétrage hospitalier, gestion des événements et affichage temps réel via WebSocket.",
+    stack: ["React", "Spring Boot", "Java", "TypeScript", "MySQL", "WebSocket"],
+    links: [
+      { label: "Frontend GitHub", href: "https://github.com/Nassimames/GAD-H-frontend" },
+      { label: "Backend GitHub", href: "https://github.com/Nassimames/GAD-H-backend" },
+    ],
+    logo: "/assets/logos/huir.jfif",
+    images: [
+      "/assets/projects/huir/Capture.PNG",
+      "/assets/projects/huir/Capture0.PNG",
+      "/assets/projects/huir/Capture1.PNG",
+      "/assets/projects/huir/Capture2.PNG",
+      "/assets/projects/huir/Capture3.PNG",
+      "/assets/projects/huir/Capture4.PNG",
+      "/assets/projects/huir/Capture5.PNG",
+      "/assets/projects/huir/Capture6.PNG",
+      "/assets/projects/huir/Capture7.PNG",
+      "/assets/projects/huir/Capture8.PNG",
+      "/assets/projects/huir/Capture9.PNG",
+    ],
+    accent: "#1B5E3B",
+    gallery: "wide",
+  },
+  {
+    id: "mooster",
+    chapter: "03.5",
+    title: "Mooster",
+    subtitle: "App mobile de gestion de bétail",
+    context: "TechCenter UIR · 2024",
+    role: "Développeuse Front-end Mobile",
+    description:
+      "Application Flutter pour le suivi du bétail via RFID et ESP32 — fiches animaux, indicateurs IoT, activation de colliers connectés. Développée au TechCenter de l'UIR.",
+    stack: ["Flutter", "Dart", "Figma", "Android Studio"],
+    links: [],
+    logo: "/assets/logos/uir.png",
+    images: [
+      "/assets/projects/techcenter/Capture.PNG",
+      "/assets/projects/techcenter/Capture2.PNG",
+    ],
+    accent: "#003DA5",
+    gallery: "mobile",
+  },
+];
+
+export const certifications: Certification[] = [
+  {
+    title: "Python Essentials 1",
+    issuer: "Cisco Networking Academy",
+    file: "/assets/certs/Python_Essentials_1_certificate_mesbahnassima0-gmail-com_2375c4e8-ba20-4bf6-8a04-b75186b2cba3 (2).pdf",
+  },
+  {
+    title: "Python Essentials 2",
+    issuer: "Cisco Networking Academy",
+    file: "/assets/certs/Python_Essentials_2_certificate_mesbahnassima0-gmail-com_65984fb8-361e-4109-a868-7d9dfe33032a (1).pdf",
+  },
+  {
+    title: "Introduction to Modern AI",
+    issuer: "Cisco Networking Academy",
+    file: "/assets/certs/Introduction_to_Modern_AI_certificate_mesbahnassima0-gmail-com_1a9ef445-1964-4c7c-9b66-04ede52e4776 (2).pdf",
+  },
+  {
+    title: "English for IT Professionals",
+    issuer: "Cisco Networking Academy",
+    file: "/assets/certs/English_for_IT_2_certificate_mesbahnassima0-gmail-com_c9e8f912-c148-4b64-8d48-6892cd8d2289 (3).pdf",
+  },
+  {
+    title: "Python for Data Science, AI & Development",
+    issuer: "IBM · Coursera",
+    date: "Mars 2023",
+    verifyUrl: "https://coursera.org/verify/CDRTLZH426W3",
+    file: "/assets/certs/Coursera CDRTLZH426W3.pdf",
+  },
+  {
+    title: "Introduction to Big Data with Spark and Hadoop",
+    issuer: "IBM · Coursera",
+    date: "Jan. 2023",
+    verifyUrl: "https://coursera.org/verify/Q5QB62H28WKK",
+    file: "/assets/certs/Coursera Q5QB62H28WKK.pdf",
+  },
+];
+
+export const skillGroups = [
+  {
+    title: "Frontend & Web",
+    items: [
+      "Next.js 16 (App Router)",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "shadcn/ui",
+      "Radix UI",
+    ],
+  },
+  {
+    title: "Mobile",
+    items: ["Flutter 3.10+", "Dart", "GetX", "Firebase FCM", "Auth sociale", "Deep Linking"],
+  },
+  {
+    title: "Backend & Data",
+    items: [
+      "Supabase",
+      "Node.js",
+      "PostgreSQL",
+      "Spring Boot",
+      "REST API",
+      "TanStack Query",
+      "Zustand",
+      "Zod",
+    ],
+  },
+  {
+    title: "DevOps & Outils",
+    items: ["Vercel CI/CD", "Vitest", "Sentry", "Git/GitHub", "PNPM", "Postman", "Figma"],
+  },
+  {
+    title: "IA & Intégrations",
+    items: ["OpenAI API", "Twilio", "Resend", "Recharts", "Google Sign-In"],
+  },
+  {
+    title: "Soft Skills",
+    items: [
+      "Agile / Scrum",
+      "Problem Solving",
+      "Sens du produit & UX",
+      "Leadership technique",
+      "Veille technologique",
+    ],
+  },
+];
