@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Source_Sans_3, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { SidebarProvider } from "@/context/SidebarContext";
 import { ChapterNav } from "@/components/ChapterNav";
 import { Footer } from "@/components/Footer";
 import { GuideAvatar } from "@/components/GuideAvatar";
@@ -36,10 +37,12 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`${display.variable} ${body.variable} ${mono.variable} antialiased`}>
-        <ChapterNav />
-        {children}
-        <GuideAvatar />
-        <Footer />
+        <SidebarProvider>
+          <ChapterNav />
+          {children}
+          <GuideAvatar />
+          <Footer />
+        </SidebarProvider>
       </body>
     </html>
   );

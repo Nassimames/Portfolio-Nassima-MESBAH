@@ -5,7 +5,7 @@ import { skillGroups } from "@/data/profile";
 
 export function SkillsChapter() {
   return (
-    <section id="stack" className="border-t border-line px-6 py-24 lg:pl-64 lg:pr-16">
+    <section id="stack" className="border-t border-line content-offset py-24">
       <div className="max-w-5xl">
         <p className="chapter-number">05</p>
         <h2 className="font-display text-4xl md:text-5xl">Stack & compétences</h2>

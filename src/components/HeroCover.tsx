@@ -8,7 +8,7 @@ export function HeroCover() {
   return (
     <section
       id="cover"
-      className="relative flex min-h-screen flex-col justify-end px-6 pb-16 pt-28 lg:pl-64 lg:pr-16"
+      className="relative flex min-h-screen flex-col justify-end content-offset pb-16 pt-28"
     >
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -right-20 top-20 h-96 w-96 rounded-full bg-paper-dark opacity-60 blur-3xl" />

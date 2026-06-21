@@ -6,7 +6,7 @@ import { experiences } from "@/data/profile";
 
 export function ExperienceChapter() {
   return (
-    <section id="parcours" className="border-t border-line bg-paper-dark/40 px-6 py-24 lg:pl-64 lg:pr-16">
+    <section id="parcours" className="border-t border-line bg-paper-dark/40 content-offset py-24">
       <div className="max-w-5xl">
         <p className="chapter-number">02</p>
         <h2 className="font-display text-4xl md:text-5xl">Parcours professionnel</h2>

@@ -6,7 +6,7 @@ import { profile } from "@/data/profile";
 
 export function ContactChapter() {
   return (
-    <section id="contact" className="border-t border-line bg-ink px-6 py-24 text-paper lg:pl-64 lg:pr-16">
+    <section id="contact" className="border-t border-line bg-ink content-offset py-24 text-paper">
       <div className="max-w-5xl">
         <p className="chapter-number text-paper/20">06</p>
         <h2 className="font-display text-4xl md:text-5xl">Contact</h2>

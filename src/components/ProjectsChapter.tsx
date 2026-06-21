@@ -96,7 +96,7 @@ function ProjectGallery({ project }: { project: Project }) {
 
 export function ProjectsChapter() {
   return (
-    <section id="projets" className="border-t border-line px-6 py-24 lg:pl-64 lg:pr-16">
+    <section id="projets" className="border-t border-line content-offset py-24">
       <div className="max-w-6xl">
         <p className="chapter-number">03</p>
         <h2 className="font-display text-4xl md:text-5xl">Projets & études de cas</h2>

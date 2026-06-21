@@ -6,7 +6,7 @@ import { education, profile } from "@/data/profile";
 
 export function ProfileChapter() {
   return (
-    <section id="profil" className="border-t border-line px-6 py-24 lg:pl-64 lg:pr-16">
+    <section id="profil" className="border-t border-line content-offset py-24">
       <div className="max-w-5xl">
         <p className="chapter-number">01</p>
         <h2 className="font-display text-4xl md:text-5xl">Profil</h2>

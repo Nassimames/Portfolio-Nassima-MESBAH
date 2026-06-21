@@ -19,6 +19,7 @@
 
 html {
   scroll-behavior: smooth;
+  --sidebar-w: 14rem;
 }
 
 body {
@@ -98,5 +99,18 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     animation: none;
+  }
+}
+
+.content-offset {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .content-offset {
+    padding-left: calc(var(--sidebar-w, 14rem) + 1.5rem);
+    padding-right: 4rem;
+    transition: padding-left 0.3s ease;
   }
 }

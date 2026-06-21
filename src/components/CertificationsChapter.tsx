@@ -6,7 +6,7 @@ import { certifications } from "@/data/profile";
 
 export function CertificationsChapter() {
   return (
-    <section id="certifs" className="border-t border-line bg-paper-dark/40 px-6 py-24 lg:pl-64 lg:pr-16">
+    <section id="certifs" className="border-t border-line bg-paper-dark/40 content-offset py-24">
       <div className="max-w-5xl">
         <p className="chapter-number">04</p>
         <h2 className="font-display text-4xl md:text-5xl">Certifications</h2>
