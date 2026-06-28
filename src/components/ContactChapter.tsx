@@ -2,17 +2,17 @@
 
 import { motion } from "framer-motion";
 import { Github, Mail, Phone, Send } from "lucide-react";
-import { profile } from "@/data/profile";
+import { useContent } from "@/context/LocaleContext";
 
 export function ContactChapter() {
+  const { profile, ui } = useContent();
+
   return (
     <section id="contact" className="border-t border-line bg-ink content-offset py-24 text-paper">
       <div className="max-w-5xl">
         <p className="chapter-number text-paper/20">06</p>
-        <h2 className="font-display text-4xl md:text-5xl">Contact</h2>
-        <p className="mt-4 max-w-xl text-paper/70">
-          Disponible pour de nouvelles opportunités — parlons de votre prochain projet web ou mobile.
-        </p>
+        <h2 className="font-display text-4xl md:text-5xl">{ui.sectionContact}</h2>
+        <p className="mt-4 max-w-xl text-paper/70">{ui.contactIntro}</p>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-2">
           <motion.div
@@ -27,7 +27,7 @@ export function ContactChapter() {
             >
               <Mail size={20} />
               <div>
-                <p className="text-xs uppercase tracking-widest text-paper/50">Email</p>
+                <p className="text-xs uppercase tracking-widest text-paper/50">{ui.emailLabel}</p>
                 <p>{profile.email}</p>
               </div>
             </a>
@@ -37,7 +37,7 @@ export function ContactChapter() {
             >
               <Phone size={20} />
               <div>
-                <p className="text-xs uppercase tracking-widest text-paper/50">Téléphone</p>
+                <p className="text-xs uppercase tracking-widest text-paper/50">{ui.phoneLabel}</p>
                 <p>{profile.phone}</p>
               </div>
             </a>
@@ -49,7 +49,7 @@ export function ContactChapter() {
             >
               <Github size={20} />
               <div>
-                <p className="text-xs uppercase tracking-widest text-paper/50">GitHub</p>
+                <p className="text-xs uppercase tracking-widest text-paper/50">{ui.githubLabel}</p>
                 <p>github.com/Nassimames</p>
               </div>
             </a>
@@ -67,34 +67,34 @@ export function ContactChapter() {
               const name = data.get("name");
               const email = data.get("email");
               const message = data.get("message");
-              window.location.href = `mailto:${profile.email}?subject=Contact portfolio — ${name}&body=${encodeURIComponent(String(message))}%0A%0A— ${name} (${email})`;
+              window.location.href = `mailto:${profile.email}?subject=${ui.contactSubject} — ${name}&body=${encodeURIComponent(String(message))}%0A%0A— ${name} (${email})`;
             }}
           >
             <input
               name="name"
               required
-              placeholder="Votre nom"
+              placeholder={ui.namePlaceholder}
               className="w-full border border-paper/20 bg-transparent px-4 py-3 outline-none placeholder:text-paper/40 focus:border-paper/60"
             />
             <input
               name="email"
               type="email"
               required
-              placeholder="votre@email.com"
+              placeholder={ui.emailPlaceholder}
               className="w-full border border-paper/20 bg-transparent px-4 py-3 outline-none placeholder:text-paper/40 focus:border-paper/60"
             />
             <textarea
               name="message"
               required
               rows={4}
-              placeholder="Votre message..."
+              placeholder={ui.messagePlaceholder}
               className="w-full resize-none border border-paper/20 bg-transparent px-4 py-3 outline-none placeholder:text-paper/40 focus:border-paper/60"
             />
             <button
               type="submit"
               className="inline-flex items-center gap-2 bg-paper px-6 py-3 text-sm font-medium text-ink transition hover:opacity-90"
             >
-              Envoyer
+              {ui.send}
               <Send size={16} />
             </button>
           </motion.form>

@@ -2,17 +2,17 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, FileText } from "lucide-react";
-import { certifications } from "@/data/profile";
+import { useContent } from "@/context/LocaleContext";
 
 export function CertificationsChapter() {
+  const { certifications, ui } = useContent();
+
   return (
     <section id="certifs" className="border-t border-line bg-paper-dark/40 content-offset py-24">
       <div className="max-w-5xl">
         <p className="chapter-number">04</p>
-        <h2 className="font-display text-4xl md:text-5xl">Certifications</h2>
-        <p className="mt-4 text-ink-soft">
-          Cisco Networking Academy, IBM Coursera — Python, IA, Big Data et English for IT.
-        </p>
+        <h2 className="font-display text-4xl md:text-5xl">{ui.sectionCerts}</h2>
+        <p className="mt-4 text-ink-soft">{ui.certificationsIntro}</p>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2">
           {certifications.map((cert, i) => (
@@ -44,7 +44,7 @@ export function CertificationsChapter() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-medium underline-offset-4 hover:underline"
                 >
-                  Voir le certificat PDF
+                  {ui.viewCert}
                 </a>
                 {cert.verifyUrl && (
                   <a
@@ -53,7 +53,7 @@ export function CertificationsChapter() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-sm text-ink-muted hover:text-ink"
                   >
-                    Vérifier
+                    {ui.verify}
                     <ExternalLink size={12} />
                   </a>
                 )}

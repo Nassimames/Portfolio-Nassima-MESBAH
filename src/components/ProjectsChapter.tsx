@@ -4,9 +4,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { LogoImage } from "@/components/LogoImage";
-import { projects, type Project } from "@/data/profile";
+import { useContent } from "@/context/LocaleContext";
+import type { Project } from "@/i18n/types";
 
 function ProjectGallery({ project }: { project: Project }) {
+  const { ui } = useContent();
   const [active, setActive] = useState(0);
   const isMobile = project.gallery === "mobile";
   const total = project.images.length;
@@ -29,7 +31,7 @@ function ProjectGallery({ project }: { project: Project }) {
             <button
               type="button"
               onClick={() => go(-1)}
-              aria-label="Image précédente"
+              aria-label={ui.prevImage}
               className="absolute left-2 z-10 rounded-full border border-line bg-white/90 p-2 shadow-sm transition hover:bg-white md:left-4"
             >
               <ChevronLeft size={18} />
@@ -37,7 +39,7 @@ function ProjectGallery({ project }: { project: Project }) {
             <button
               type="button"
               onClick={() => go(1)}
-              aria-label="Image suivante"
+              aria-label={ui.nextImage}
               className="absolute right-2 z-10 rounded-full border border-line bg-white/90 p-2 shadow-sm transition hover:bg-white md:right-4"
             >
               <ChevronRight size={18} />
@@ -48,7 +50,7 @@ function ProjectGallery({ project }: { project: Project }) {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={project.images[active]}
-          alt={`${project.title} — capture ${active + 1}`}
+          alt={`${project.title} — ${ui.captureAlt} ${active + 1}`}
           className={
             isMobile
               ? "max-h-[560px] w-full rounded-[1.5rem] object-contain object-top"
@@ -70,9 +72,7 @@ function ProjectGallery({ project }: { project: Project }) {
               key={src}
               type="button"
               onClick={() => setActive(i)}
-              aria-label={
-                project.imageLabels?.[i] ?? `Voir capture ${i + 1}`
-              }
+              aria-label={project.imageLabels?.[i] ?? `${ui.viewCapture} ${i + 1}`}
               title={project.imageLabels?.[i]}
               className={`shrink-0 overflow-hidden rounded border-2 transition ${
                 i === active ? "border-ink" : "border-line opacity-70 hover:opacity-100"
@@ -95,14 +95,14 @@ function ProjectGallery({ project }: { project: Project }) {
 }
 
 export function ProjectsChapter() {
+  const { projects, ui } = useContent();
+
   return (
     <section id="projets" className="border-t border-line content-offset py-24">
       <div className="max-w-6xl">
         <p className="chapter-number">03</p>
-        <h2 className="font-display text-4xl md:text-5xl">Projets & études de cas</h2>
-        <p className="mt-4 max-w-2xl text-ink-soft">
-          Captures réelles de vos livrables — GoBeldi, MyShop, Mobile, GAD-H et Mooster.
-        </p>
+        <h2 className="font-display text-4xl md:text-5xl">{ui.sectionProjects}</h2>
+        <p className="mt-4 max-w-2xl text-ink-soft">{ui.projectsIntro}</p>
 
         <div className="mt-16 space-y-24">
           {projects.map((project, index) => (
@@ -121,7 +121,7 @@ export function ProjectsChapter() {
                       <LogoImage src={project.logo} alt="" size={40} className="rounded" />
                     )}
                     <span className="font-mono text-xs text-ink-muted">
-                      Chapitre {project.chapter}
+                      {ui.chapterLabel} {project.chapter}
                     </span>
                   </div>
 
@@ -136,7 +136,7 @@ export function ProjectsChapter() {
                   <p className="mt-6 leading-relaxed text-ink-soft">{project.description}</p>
 
                   <p className="mt-4 text-sm">
-                    <span className="font-medium">Rôle : </span>
+                    <span className="font-medium">{ui.roleLabel} : </span>
                     {project.role}
                   </p>
 

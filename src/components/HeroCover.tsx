@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
-import { chapters, profile } from "@/data/profile";
+import { useContent } from "@/context/LocaleContext";
 
 export function HeroCover() {
+  const { profile, chapters, ui } = useContent();
+
   return (
     <section
       id="cover"
@@ -22,7 +24,7 @@ export function HeroCover() {
         className="relative max-w-5xl"
       >
         <p className="font-mono text-xs uppercase tracking-[0.35em] text-ink-muted">
-          Chapitres de Code · Portfolio éditorial
+          {ui.heroEyebrow}
         </p>
 
         <h1 className="mt-6 font-display text-[clamp(2.8rem,8vw,6.5rem)] leading-[0.95] tracking-tight">
@@ -42,7 +44,7 @@ export function HeroCover() {
             href="#projets"
             className="inline-flex items-center gap-2 bg-ink px-6 py-3 text-sm font-medium text-paper transition hover:opacity-85"
           >
-            Explorer mes projets
+            {ui.exploreProjects}
             <ArrowDown size={16} />
           </a>
           <a
@@ -52,7 +54,7 @@ export function HeroCover() {
             className="inline-flex items-center gap-2 border border-line bg-white px-6 py-3 text-sm transition hover:border-ink"
           >
             <Download size={16} />
-            CV PDF
+            {ui.cvPdf}
           </a>
         </div>
       </motion.div>

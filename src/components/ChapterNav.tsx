@@ -16,9 +16,10 @@ import {
   X,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { LogoMark } from "@/components/LogoMark";
+import { useContent } from "@/context/LocaleContext";
 import { useSidebar } from "@/context/SidebarContext";
-import { chapters, profile } from "@/data/profile";
 import { useActiveChapter } from "@/hooks/useActiveChapter";
 
 const chapterIcons: Record<string, LucideIcon> = {
@@ -35,6 +36,7 @@ export function ChapterNav() {
   const [open, setOpen] = useState(false);
   const active = useActiveChapter();
   const { collapsed, toggle } = useSidebar();
+  const { profile, chapters, ui } = useContent();
 
   return (
     <>
@@ -42,16 +44,19 @@ export function ChapterNav() {
         <div className="flex items-center justify-between px-5 py-4">
           <a href="#cover" className="flex items-center gap-2">
             <LogoMark size="sm" />
-            <span className="font-display text-lg">Nassima</span>
+            <span className="font-display text-lg">{profile.shortName}</span>
           </a>
-          <button
-            type="button"
-            onClick={() => setOpen(!open)}
-            aria-label="Menu"
-            className="rounded border border-line p-2"
-          >
-            {open ? <X size={18} /> : <Menu size={18} />}
-          </button>
+          <div className="flex items-center gap-2">
+            <LanguageSwitcher />
+            <button
+              type="button"
+              onClick={() => setOpen(!open)}
+              aria-label={ui.menu}
+              className="rounded border border-line p-2"
+            >
+              {open ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </div>
         {open && (
           <nav className="border-t border-line px-5 py-4">
@@ -82,19 +87,19 @@ export function ChapterNav() {
         }`}
       >
         <div
-          className={`mb-8 flex items-center ${collapsed ? "justify-center" : "justify-between gap-2"}`}
+          className={`mb-6 flex items-center ${collapsed ? "flex-col gap-3" : "justify-between gap-2"}`}
         >
           <a
             href="#cover"
             className={`flex items-center ${collapsed ? "justify-center" : "gap-3"}`}
-            title="Couverture"
+            title={chapters[0]?.label}
           >
             <LogoMark size={collapsed ? "sm" : "md"} />
             {!collapsed && (
               <div>
-                <p className="font-display text-xl leading-tight">Nassima</p>
+                <p className="font-display text-xl leading-tight">{profile.shortName}</p>
                 <p className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
-                  Portfolio · 2026
+                  {ui.portfolioYear}
                 </p>
               </div>
             )}
@@ -104,7 +109,7 @@ export function ChapterNav() {
             <button
               type="button"
               onClick={toggle}
-              aria-label="Réduire le menu"
+              aria-label={ui.collapseMenu}
               className="rounded border border-line p-1.5 text-ink-muted transition hover:border-ink hover:text-ink"
             >
               <ChevronLeft size={16} strokeWidth={1.75} />
@@ -112,11 +117,15 @@ export function ChapterNav() {
           )}
         </div>
 
+        <div className={`mb-4 ${collapsed ? "flex justify-center" : ""}`}>
+          <LanguageSwitcher collapsed={collapsed} />
+        </div>
+
         {collapsed && (
           <button
             type="button"
             onClick={toggle}
-            aria-label="Ouvrir le menu"
+            aria-label={ui.expandMenu}
             className="mb-4 flex justify-center rounded border border-line p-1.5 text-ink-muted transition hover:border-ink hover:text-ink"
           >
             <ChevronRight size={16} strokeWidth={1.75} />
@@ -161,7 +170,7 @@ export function ChapterNav() {
           href={profile.cvPath}
           target="_blank"
           rel="noopener noreferrer"
-          title={collapsed ? "Télécharger CV" : undefined}
+          title={collapsed ? ui.downloadCv : undefined}
           className={`mt-auto border border-line bg-white transition hover:bg-ink hover:text-paper ${
             collapsed
               ? "flex items-center justify-center p-2.5"
@@ -171,7 +180,7 @@ export function ChapterNav() {
           {collapsed ? (
             <Download size={18} strokeWidth={1.75} />
           ) : (
-            "Télécharger CV"
+            ui.downloadCv
           )}
         </a>
       </aside>

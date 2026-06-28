@@ -2,14 +2,16 @@
 
 import { motion } from "framer-motion";
 import { Avatar } from "@/components/Avatar";
-import { education, profile } from "@/data/profile";
+import { useContent } from "@/context/LocaleContext";
 
 export function ProfileChapter() {
+  const { profile, education, ui } = useContent();
+
   return (
     <section id="profil" className="border-t border-line content-offset py-24">
       <div className="max-w-5xl">
         <p className="chapter-number">01</p>
-        <h2 className="font-display text-4xl md:text-5xl">Profil</h2>
+        <h2 className="font-display text-4xl md:text-5xl">{ui.sectionProfile}</h2>
 
         <div className="mt-12 grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
           <motion.div
@@ -38,7 +40,7 @@ export function ProfileChapter() {
 
             <div>
               <h3 className="font-mono text-xs uppercase tracking-widest text-ink-muted">
-                Langues
+                {ui.languagesTitle}
               </h3>
               <ul className="mt-4 space-y-2">
                 {profile.languages.map((l) => (
@@ -52,7 +54,7 @@ export function ProfileChapter() {
 
             <div>
               <h3 className="font-mono text-xs uppercase tracking-widest text-ink-muted">
-                Centres d&apos;intérêt
+                {ui.interestsTitle}
               </h3>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {profile.interests.map((item) => (
@@ -67,7 +69,7 @@ export function ProfileChapter() {
 
         <div className="mt-16">
           <h3 className="font-mono text-xs uppercase tracking-widest text-ink-muted">
-            Formation
+            {ui.educationTitle}
           </h3>
           <div className="mt-6 space-y-0">
             {education.map((edu, i) => (

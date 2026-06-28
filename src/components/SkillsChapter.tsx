@@ -1,17 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { skillGroups } from "@/data/profile";
+import { useContent } from "@/context/LocaleContext";
 
 export function SkillsChapter() {
+  const { skillGroups, ui } = useContent();
+
   return (
     <section id="stack" className="border-t border-line content-offset py-24">
       <div className="max-w-5xl">
         <p className="chapter-number">05</p>
-        <h2 className="font-display text-4xl md:text-5xl">Stack & compétences</h2>
-        <p className="mt-4 text-ink-soft">
-          Extraits de mon CV — stacks modernes, mobile, DevOps et méthodologie Agile.
-        </p>
+        <h2 className="font-display text-4xl md:text-5xl">{ui.sectionStack}</h2>
+        <p className="mt-4 text-ink-soft">{ui.skillsIntro}</p>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {skillGroups.map((group, i) => (

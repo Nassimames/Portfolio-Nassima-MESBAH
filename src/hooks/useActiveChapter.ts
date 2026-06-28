@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { chapters } from "@/data/profile";
+import { useContent } from "@/context/LocaleContext";
 
 export function useActiveChapter(defaultId = "cover") {
+  const { chapters } = useContent();
   const [active, setActive] = useState(defaultId);
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export function useActiveChapter(defaultId = "cover") {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [chapters]);
 
   return active;
 }

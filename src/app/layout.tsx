@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Source_Sans_3, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { LocaleProvider } from "@/context/LocaleContext";
 import { SidebarProvider } from "@/context/SidebarContext";
 import { ChapterNav } from "@/components/ChapterNav";
 import { Footer } from "@/components/Footer";
@@ -35,14 +36,16 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
       <body className={`${display.variable} ${body.variable} ${mono.variable} antialiased`}>
-        <SidebarProvider>
-          <ChapterNav />
-          {children}
-          <GuideAvatar />
-          <Footer />
-        </SidebarProvider>
+        <LocaleProvider>
+          <SidebarProvider>
+            <ChapterNav />
+            {children}
+            <GuideAvatar />
+            <Footer />
+          </SidebarProvider>
+        </LocaleProvider>
       </body>
     </html>
   );

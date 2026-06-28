@@ -2,17 +2,17 @@
 
 import { motion } from "framer-motion";
 import { LogoImage } from "@/components/LogoImage";
-import { experiences } from "@/data/profile";
+import { useContent } from "@/context/LocaleContext";
 
 export function ExperienceChapter() {
+  const { experiences, ui } = useContent();
+
   return (
     <section id="parcours" className="border-t border-line bg-paper-dark/40 content-offset py-24">
       <div className="max-w-5xl">
         <p className="chapter-number">02</p>
-        <h2 className="font-display text-4xl md:text-5xl">Parcours professionnel</h2>
-        <p className="mt-4 max-w-2xl text-ink-soft">
-          Quatre expériences, quatre univers — e-commerce, santé, IoT agricole et data science.
-        </p>
+        <h2 className="font-display text-4xl md:text-5xl">{ui.sectionJourney}</h2>
+        <p className="mt-4 max-w-2xl text-ink-soft">{ui.experienceIntro}</p>
 
         <div className="relative mt-16">
           <div className="absolute bottom-0 left-[19px] top-0 w-px bg-line md:left-1/2 md:-translate-x-px" />
