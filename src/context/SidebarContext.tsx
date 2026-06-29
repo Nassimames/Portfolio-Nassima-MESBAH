@@ -14,19 +14,22 @@ const SidebarContext = createContext<SidebarContextValue>({
 
 export function SidebarProvider({ children }: { children: React.ReactNode }) {
   const [collapsed, setCollapsed] = useState(false);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem("sidebar-collapsed");
     if (saved === "true") setCollapsed(true);
+    setReady(true);
   }, []);
 
   useEffect(() => {
+    if (!ready) return;
     document.documentElement.style.setProperty(
       "--sidebar-w",
       collapsed ? "4.5rem" : "14rem",
     );
     localStorage.setItem("sidebar-collapsed", String(collapsed));
-  }, [collapsed]);
+  }, [collapsed, ready]);
 
   return (
     <SidebarContext.Provider

@@ -43,7 +43,20 @@ export function ExperienceChapter() {
 
               <div className="ml-10 border border-line bg-white p-6 md:ml-0">
                 {exp.logo && (
-                  <LogoImage src={exp.logo} alt={exp.company} className="mb-4 rounded" />
+                  <div
+                    className={
+                      exp.logoWide
+                        ? "mb-4 inline-flex rounded border border-line bg-white px-4 py-3"
+                        : "mb-4"
+                    }
+                  >
+                    <LogoImage
+                      src={exp.logo}
+                      alt={exp.company}
+                      wide={exp.logoWide}
+                      className={exp.logoWide ? "" : "rounded"}
+                    />
+                  </div>
                 )}
                 <ul className="space-y-2 text-sm leading-relaxed text-ink-soft">
                   {exp.highlights.map((h) => (

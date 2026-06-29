@@ -4,30 +4,23 @@ type LogoProps = {
   src: string;
   alt: string;
   size?: number;
+  wide?: boolean;
   className?: string;
 };
 
-export function LogoImage({ src, alt, size = 48, className = "" }: LogoProps) {
-  if (src.endsWith(".jfif")) {
-    return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src={src}
-        alt={alt}
-        width={size}
-        height={size}
-        className={`object-contain ${className}`}
-      />
-    );
-  }
+export function LogoImage({ src, alt, size = 48, wide = false, className = "" }: LogoProps) {
+  const imgClass = wide
+    ? `h-14 w-auto max-w-[240px] object-contain object-left ${className}`
+    : `object-contain ${className}`;
 
+  // eslint-disable-next-line @next/next/no-img-element
   return (
-    <Image
+    <img
       src={src}
       alt={alt}
-      width={size}
-      height={size}
-      className={`object-contain ${className}`}
+      width={wide ? 240 : size}
+      height={wide ? 56 : size}
+      className={imgClass}
     />
   );
 }

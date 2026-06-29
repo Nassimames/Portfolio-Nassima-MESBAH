@@ -47,9 +47,9 @@ export const en: SiteContent = {
     interestsTitle: "Interests",
     educationTitle: "Education",
     experienceIntro:
-      "Four experiences, four worlds — e-commerce, healthcare, agricultural IoT and data science.",
+      "Five experiences, five worlds — e-commerce, religious mobile, healthcare, agricultural IoT and data science.",
     projectsIntro:
-      "Real deliverable screenshots — GoBeldi, MyShop, Mobile, GAD-H and Mooster.",
+      "Real deliverable screenshots — GoBeldi, QuranApp, MyShop, Mobile, GAD-H and Mooster.",
     certificationsIntro:
       "Cisco Networking Academy, IBM Coursera — Python, AI, Big Data and English for IT.",
     skillsIntro:
@@ -94,7 +94,7 @@ export const en: SiteContent = {
   chapterReactions: {
     cover: { message: "Hello! Welcome to my portfolio.", gesture: "👋" },
     profil: { message: "Here's who I am — background, languages and passions.", gesture: "📖" },
-    parcours: { message: "GoBeldi, HUIR, TechCenter… my key experiences.", gesture: "💼" },
+    parcours: { message: "GoBeldi, AGH, HUIR, TechCenter… my key experiences.", gesture: "💼" },
     projets: { message: "My deliverables — real screenshots from each project.", gesture: "🚀" },
     certifs: { message: "Cisco, IBM, Coursera — my certifications.", gesture: "🎓" },
     stack: { message: "Next.js, Flutter, Supabase… my technical arsenal.", gesture: "⚡" },
@@ -135,6 +135,23 @@ export const en: SiteContent = {
       ],
       stack: ["Next.js 16", "React 19", "TypeScript", "Supabase", "Flutter", "Tailwind v4", "OpenAI", "Firebase", "Vercel"],
       accent: "#E8531A",
+    },
+    {
+      period: "Nov. – Dec. 2025",
+      role: "Flutter Developer Intern",
+      company: "AGH Data Agency Holding SA",
+      location: "Morocco",
+      logo: "/assets/logos/agh.jfif",
+      logoWide: true,
+      highlights: [
+        "Contributed to the development of the QuranApp (Tabaa Dini) MVP",
+        "Implemented offline-first functionality",
+        "Developed multilingual support (Arabic, French, English)",
+        "Improved UI/UX and application architecture",
+        "Collaborated in the delivery of a functional MVP",
+      ],
+      stack: ["Flutter", "Dart", "Hive", "SharedPreferences", "Git"],
+      accent: "#0F4C5C",
     },
     {
       period: "Feb. – Jun. 2025",
@@ -242,8 +259,37 @@ export const en: SiteContent = {
       gallery: "mobile",
     },
     {
-      id: "gad-h",
+      id: "quranapp",
       chapter: "03.4",
+      title: "QuranApp — Tabaa Dini",
+      subtitle: "Religious mobile app · MVP",
+      context: "AGH Data Agency · Nov. – Dec. 2025",
+      role: "Flutter Developer Intern",
+      description:
+        "Flutter app for Quran reading and learning, built offline-first with multilingual support (Arabic, French, English). Work on UI/UX, architecture and delivery of a functional MVP.",
+      stack: ["Flutter", "Dart", "Hive", "SharedPreferences", "Git"],
+      links: [],
+      logo: "/assets/logos/agh.jfif",
+      logoWide: true,
+      images: [
+        "/assets/projects/quranapp/capture-1.jpg",
+        "/assets/projects/quranapp/capture-2.jpg",
+        "/assets/projects/quranapp/capture-3.jpg",
+        "/assets/projects/quranapp/capture-4.jpg",
+        "/assets/projects/quranapp/capture-5.jpg",
+        "/assets/projects/quranapp/capture-6.jpg",
+        "/assets/projects/quranapp/capture-7.jpg",
+        "/assets/projects/quranapp/capture-8.jpg",
+        "/assets/projects/quranapp/capture-9.jpg",
+        "/assets/projects/quranapp/capture-10.jpg",
+        "/assets/projects/quranapp/capture-11.jpg",
+      ],
+      accent: "#0F4C5C",
+      gallery: "mobile",
+    },
+    {
+      id: "gad-h",
+      chapter: "03.5",
       title: "GAD-H / HUIR",
       subtitle: "Hospital dynamic display system",
       context: "HUIR · Final Internship · 2025",
@@ -274,7 +320,7 @@ export const en: SiteContent = {
     },
     {
       id: "mooster",
-      chapter: "03.5",
+      chapter: "03.6",
       title: "Mooster",
       subtitle: "Livestock management mobile app",
       context: "TechCenter UIR · 2024",

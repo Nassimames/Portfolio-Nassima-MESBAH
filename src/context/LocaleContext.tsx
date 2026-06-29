@@ -14,16 +14,19 @@ const LocaleContext = createContext<LocaleContextValue | null>(null);
 
 export function LocaleProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("fr");
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem("portfolio-locale");
     if (saved === "fr" || saved === "en") setLocaleState(saved);
+    setReady(true);
   }, []);
 
   useEffect(() => {
+    if (!ready) return;
     document.documentElement.lang = locale;
     localStorage.setItem("portfolio-locale", locale);
-  }, [locale]);
+  }, [locale, ready]);
 
   const setLocale = (next: Locale) => setLocaleState(next);
   const toggleLocale = () => setLocaleState((l) => (l === "fr" ? "en" : "fr"));

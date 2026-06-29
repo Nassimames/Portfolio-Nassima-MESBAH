@@ -47,9 +47,9 @@ export const fr: SiteContent = {
     interestsTitle: "Centres d'intérêt",
     educationTitle: "Formation",
     experienceIntro:
-      "Quatre expériences, quatre univers — e-commerce, santé, IoT agricole et data science.",
+      "Cinq expériences, cinq univers — e-commerce, mobile religieux, santé, IoT agricole et data science.",
     projectsIntro:
-      "Captures réelles de vos livrables — GoBeldi, MyShop, Mobile, GAD-H et Mooster.",
+      "Captures réelles de vos livrables — GoBeldi, QuranApp, MyShop, Mobile, GAD-H et Mooster.",
     certificationsIntro:
       "Cisco Networking Academy, IBM Coursera — Python, IA, Big Data et English for IT.",
     skillsIntro:
@@ -94,7 +94,7 @@ export const fr: SiteContent = {
   chapterReactions: {
     cover: { message: "Bonjour ! Bienvenue dans mon portfolio.", gesture: "👋" },
     profil: { message: "Voici qui je suis — parcours, langues et passions.", gesture: "📖" },
-    parcours: { message: "GoBeldi, HUIR, TechCenter… mes expériences clés.", gesture: "💼" },
+    parcours: { message: "GoBeldi, AGH, HUIR, TechCenter… mes expériences clés.", gesture: "💼" },
     projets: { message: "Mes livrables — captures réelles de chaque projet.", gesture: "🚀" },
     certifs: { message: "Cisco, IBM, Coursera — mes certifications.", gesture: "🎓" },
     stack: { message: "Next.js, Flutter, Supabase… mon arsenal technique.", gesture: "⚡" },
@@ -135,6 +135,23 @@ export const fr: SiteContent = {
       ],
       stack: ["Next.js 16", "React 19", "TypeScript", "Supabase", "Flutter", "Tailwind v4", "OpenAI", "Firebase", "Vercel"],
       accent: "#E8531A",
+    },
+    {
+      period: "Nov. – Déc. 2025",
+      role: "Stagiaire Développeuse Flutter",
+      company: "AGH Data Agency Holding SA",
+      location: "Maroc",
+      logo: "/assets/logos/agh.jfif",
+      logoWide: true,
+      highlights: [
+        "Contribution au développement du MVP QuranApp (Tabaa Dini)",
+        "Mise en place du mode offline-first",
+        "Développement du support multilingue (arabe, français, anglais)",
+        "Amélioration UI/UX et architecture de l'application",
+        "Collaboration à la livraison d'un MVP fonctionnel",
+      ],
+      stack: ["Flutter", "Dart", "Hive", "SharedPreferences", "Git"],
+      accent: "#0F4C5C",
     },
     {
       period: "Fév. – Juin 2025",
@@ -242,8 +259,37 @@ export const fr: SiteContent = {
       gallery: "mobile",
     },
     {
-      id: "gad-h",
+      id: "quranapp",
       chapter: "03.4",
+      title: "QuranApp — Tabaa Dini",
+      subtitle: "Application mobile religieuse · MVP",
+      context: "AGH Data Agency · Nov. – Déc. 2025",
+      role: "Stagiaire Développeuse Flutter",
+      description:
+        "Application Flutter de lecture et d'apprentissage du Coran, conçue en mode offline-first avec support multilingue (arabe, français, anglais). Travail sur l'UI/UX, l'architecture et la livraison d'un MVP fonctionnel.",
+      stack: ["Flutter", "Dart", "Hive", "SharedPreferences", "Git"],
+      links: [],
+      logo: "/assets/logos/agh.jfif",
+      logoWide: true,
+      images: [
+        "/assets/projects/quranapp/capture-1.jpg",
+        "/assets/projects/quranapp/capture-2.jpg",
+        "/assets/projects/quranapp/capture-3.jpg",
+        "/assets/projects/quranapp/capture-4.jpg",
+        "/assets/projects/quranapp/capture-5.jpg",
+        "/assets/projects/quranapp/capture-6.jpg",
+        "/assets/projects/quranapp/capture-7.jpg",
+        "/assets/projects/quranapp/capture-8.jpg",
+        "/assets/projects/quranapp/capture-9.jpg",
+        "/assets/projects/quranapp/capture-10.jpg",
+        "/assets/projects/quranapp/capture-11.jpg",
+      ],
+      accent: "#0F4C5C",
+      gallery: "mobile",
+    },
+    {
+      id: "gad-h",
+      chapter: "03.5",
       title: "GAD-H / HUIR",
       subtitle: "Système d'affichage dynamique hospitalier",
       context: "HUIR · Stage PFE · 2025",
@@ -274,7 +320,7 @@ export const fr: SiteContent = {
     },
     {
       id: "mooster",
-      chapter: "03.5",
+      chapter: "03.6",
       title: "Mooster",
       subtitle: "App mobile de gestion de bétail",
       context: "TechCenter UIR · 2024",

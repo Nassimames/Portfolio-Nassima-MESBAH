@@ -118,7 +118,21 @@ export function ProjectsChapter() {
                 <div>
                   <div className="flex items-center gap-3">
                     {project.logo && (
-                      <LogoImage src={project.logo} alt="" size={40} className="rounded" />
+                      <div
+                        className={
+                          project.logoWide
+                            ? "inline-flex rounded border border-line bg-white px-3 py-2"
+                            : ""
+                        }
+                      >
+                        <LogoImage
+                          src={project.logo}
+                          alt=""
+                          size={40}
+                          wide={project.logoWide}
+                          className={project.logoWide ? "" : "rounded"}
+                        />
+                      </div>
                     )}
                     <span className="font-mono text-xs text-ink-muted">
                       {ui.chapterLabel} {project.chapter}

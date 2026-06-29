@@ -13,6 +13,7 @@ export type Experience = {
   company: string;
   location: string;
   logo?: string;
+  logoWide?: boolean;
   highlights: string[];
   stack: string[];
   accent: string;
@@ -30,6 +31,7 @@ export type Project = {
   links: { label: string; href: string }[];
   images: string[];
   logo?: string;
+  logoWide?: boolean;
   accent: string;
   gallery?: "wide" | "mobile";
   imageLabels?: string[];
