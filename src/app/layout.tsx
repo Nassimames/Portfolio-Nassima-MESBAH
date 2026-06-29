@@ -6,6 +6,7 @@ import { SidebarProvider } from "@/context/SidebarContext";
 import { ChapterNav } from "@/components/ChapterNav";
 import { Footer } from "@/components/Footer";
 import { GuideAvatar } from "@/components/GuideAvatar";
+import { Analytics } from "@vercel/analytics/next"
 
 const display = Fraunces({
   subsets: ["latin"],
