@@ -4,6 +4,7 @@ import { ExperienceChapter } from "@/components/ExperienceChapter";
 import { ProjectsChapter } from "@/components/ProjectsChapter";
 import { CertificationsChapter } from "@/components/CertificationsChapter";
 import { SkillsChapter } from "@/components/SkillsChapter";
+import { NowChapter } from "@/components/NowChapter";
 import { ContactChapter } from "@/components/ContactChapter";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <ProjectsChapter />
       <CertificationsChapter />
       <SkillsChapter />
+      <NowChapter />
       <ContactChapter />
     </>
   );

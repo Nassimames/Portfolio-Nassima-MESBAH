@@ -114,11 +114,18 @@ export type SiteContent = {
     sectionProjects: string;
     sectionCerts: string;
     sectionStack: string;
+    sectionNow: string;
     sectionContact: string;
     sectionContactCta: string;
     emailLabel: string;
     phoneLabel: string;
     githubLabel: string;
+    nowEyebrow: string;
+    nowTitle: string;
+    nowIntro: string;
+    nowPathTitle: string;
+    nowCompleted: string;
+    nowCta: string;
   };
   chapters: Chapter[];
   chapterReactions: Record<string, ChapterReaction>;

@@ -47,6 +47,7 @@ export default function RootLayout({
             <Footer />
           </SidebarProvider>
         </LocaleProvider>
+        <Analytics />
       </body>
     </html>
   );

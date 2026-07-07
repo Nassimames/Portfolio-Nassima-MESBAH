@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 type LogoProps = {
   src: string;
   alt: string;

@@ -12,6 +12,7 @@ import {
   FolderKanban,
   Mail,
   Menu,
+  Sparkles,
   User,
   X,
 } from "lucide-react";
@@ -29,8 +30,18 @@ const chapterIcons: Record<string, LucideIcon> = {
   projets: FolderKanban,
   certifs: Award,
   stack: Code2,
+  now: Sparkles,
   contact: Mail,
 };
+
+function AttentionDot() {
+  return (
+    <span className="relative inline-flex h-2.5 w-2.5" aria-hidden>
+      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-500/60" />
+      <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-amber-500" />
+    </span>
+  );
+}
 
 export function ChapterNav() {
   const [open, setOpen] = useState(false);
@@ -71,7 +82,14 @@ export function ChapterNav() {
                     active === ch.id ? "font-medium text-ink" : "text-ink-soft"
                   }`}
                 >
-                  <Icon size={16} strokeWidth={1.75} />
+                  <span className="relative inline-flex items-center">
+                    <Icon size={16} strokeWidth={1.75} />
+                    {ch.id === "now" && (
+                      <span className="absolute -right-2 -top-1">
+                        <AttentionDot />
+                      </span>
+                    )}
+                  </span>
                   <span className="font-mono text-xs text-ink-muted">{ch.number}</span>
                   {ch.label}
                 </a>
@@ -150,11 +168,18 @@ export function ChapterNav() {
                     : "text-ink-soft hover:bg-paper-dark"
                 }`}
               >
-                <Icon
-                  size={18}
-                  strokeWidth={1.75}
-                  className={isActive ? "text-paper" : "text-ink-muted group-hover:text-ink"}
-                />
+                <span className="relative inline-flex items-center">
+                  <Icon
+                    size={18}
+                    strokeWidth={1.75}
+                    className={isActive ? "text-paper" : "text-ink-muted group-hover:text-ink"}
+                  />
+                  {ch.id === "now" && (
+                    <span className="absolute -right-2 -top-1">
+                      <AttentionDot />
+                    </span>
+                  )}
+                </span>
                 {!collapsed && (
                   <>
                     <span className="font-mono text-xs opacity-60">{ch.number}</span>
