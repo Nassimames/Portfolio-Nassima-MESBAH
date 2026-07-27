@@ -6,6 +6,8 @@ import { useContent } from "@/context/LocaleContext";
 
 const ASPNET_PATH_URL =
   "https://learn.microsoft.com/fr-fr/training/paths/aspnet-core-fundamentals/";
+const BLAZOR_PATH_URL =
+  "https://learn.microsoft.com/fr-fr/training/paths/build-web-apps-with-blazor/";
 
 export function NowChapter() {
   const { ui } = useContent();
@@ -43,30 +45,59 @@ export function NowChapter() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ delay: 0.06 }}
-            className="border border-line bg-white p-6"
+            className="space-y-4"
           >
-            <div className="flex items-start gap-3">
-              <div className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-line bg-paper">
-                <Trophy size={18} className="text-ink" />
+            <div className="border border-line bg-white p-6">
+              <div className="flex items-start gap-3">
+                <div className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-line bg-paper">
+                  <Trophy size={18} className="text-ink" />
+                </div>
+                <div className="min-w-0">
+                  <p className="font-display text-xl leading-snug">{ui.nowPathTitle}</p>
+                  <p className="mt-2 text-sm text-ink-soft">{ui.nowCompleted}</p>
+                </div>
               </div>
-              <div className="min-w-0">
-                <p className="font-display text-xl leading-snug">{ui.nowPathTitle}</p>
-                <p className="mt-2 text-sm text-ink-soft">{ui.nowCompleted}</p>
-              </div>
+
+              <a
+                href={ASPNET_PATH_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-2 border border-line bg-white px-4 py-2 text-sm transition hover:border-ink"
+              >
+                <span className="inline-flex items-center gap-2">
+                  <Sparkles size={16} />
+                  {ui.nowCta}
+                </span>
+                <ArrowUpRight size={14} />
+              </a>
             </div>
 
-            <a
-              href={ASPNET_PATH_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 border border-line bg-white px-4 py-2 text-sm transition hover:border-ink"
-            >
-              <span className="inline-flex items-center gap-2">
-                <Sparkles size={16} />
-                {ui.nowCta}
-              </span>
-              <ArrowUpRight size={14} />
-            </a>
+            <div className="border border-line bg-white p-6">
+              <div className="flex items-start gap-3">
+                <div className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-line bg-paper">
+                  <Sparkles size={18} className="text-ink" />
+                </div>
+                <div className="min-w-0">
+                  <p className="font-display text-xl leading-snug">{ui.nowBlazorTitle}</p>
+                  <p className="mt-2 text-sm text-ink-soft">{ui.nowBlazorStatus}</p>
+                </div>
+              </div>
+
+              <p className="mt-4 text-sm leading-relaxed text-ink-soft">{ui.nowBlazorFocus}</p>
+
+              <a
+                href={BLAZOR_PATH_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-2 border border-line bg-white px-4 py-2 text-sm transition hover:border-ink"
+              >
+                <span className="inline-flex items-center gap-2">
+                  <Sparkles size={16} />
+                  {ui.nowBlazorCta}
+                </span>
+                <ArrowUpRight size={14} />
+              </a>
+            </div>
           </motion.aside>
         </div>
       </div>

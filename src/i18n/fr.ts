@@ -30,7 +30,7 @@ export const fr: SiteContent = {
     ],
     interests: [
       "Écriture de drame & introspection",
-      "Lecture fantastique",
+      "Lecture",
       "Crochet & face painting",
       "Cuisine marocaine & internationale",
     ],
@@ -40,7 +40,7 @@ export const fr: SiteContent = {
     heroEyebrow: "Chapitres de Code · Portfolio éditorial",
     exploreProjects: "Explorer mes projets",
     cvPdf: "CV PDF",
-    downloadCv: "Télécharger CV",
+    downloadCv: "Télécharger ",
     roleLabel: "Rôle",
     chapterLabel: "Chapitre",
     languagesTitle: "Langues",
@@ -89,6 +89,11 @@ export const fr: SiteContent = {
     nowPathTitle: "Comprendre les principes fondamentaux d’ASP.NET Core",
     nowCompleted: "Parcours terminé sur Microsoft Learn (07/07/2026).",
     nowCta: "Voir le parcours",
+    nowBlazorTitle: "Créer des applications web avec Blazor",
+    nowBlazorStatus: "En cours sur Microsoft Learn.",
+    nowBlazorFocus:
+      "Objectif : composants, routage, formulaires & validation, interaction avec les données — pour construire des interfaces web .NET modernes.",
+    nowBlazorCta: "Continuer le parcours",
   },
   chapters: [
     { id: "cover", number: "00", label: "Couverture", href: "#cover" },

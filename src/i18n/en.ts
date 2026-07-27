@@ -89,6 +89,11 @@ export const en: SiteContent = {
     nowPathTitle: "Understand the fundamentals of ASP.NET Core",
     nowCompleted: "Learning path completed on Microsoft Learn (07/07/2026).",
     nowCta: "View learning path",
+    nowBlazorTitle: "Build web apps with Blazor",
+    nowBlazorStatus: "In progress on Microsoft Learn.",
+    nowBlazorFocus:
+      "Focus: components, routing, forms & validation, and data interaction — to build modern .NET web UIs.",
+    nowBlazorCta: "Continue learning path",
   },
   chapters: [
     { id: "cover", number: "00", label: "Cover", href: "#cover" },

@@ -126,6 +126,10 @@ export type SiteContent = {
     nowPathTitle: string;
     nowCompleted: string;
     nowCta: string;
+    nowBlazorTitle: string;
+    nowBlazorStatus: string;
+    nowBlazorFocus: string;
+    nowBlazorCta: string;
   };
   chapters: Chapter[];
   chapterReactions: Record<string, ChapterReaction>;
