@@ -318,13 +318,13 @@ export function PersonalProjectsChapter() {
               {project.features && project.features.length > 0 && (
                 <div className="mt-10 border-t border-line pt-8">
                   <h4 className="font-display text-2xl">{ui.personalProjectFeatures}</h4>
-                  <ul className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                  <ul className="mt-5 flex flex-wrap justify-center gap-3">
                     {project.features.map((feature) => {
                       const Icon = featureIcons[feature.icon];
                       return (
                         <li
                           key={feature.title}
-                          className="border border-line bg-paper p-4 transition-colors hover:border-[#78927b]"
+                          className="w-full border border-line bg-paper p-4 transition-colors hover:border-[#78927b] sm:w-[calc(50%-0.375rem)] xl:w-[calc(33.333%-0.5rem)]"
                         >
                           <div className="flex items-center gap-2.5">
                             <Icon size={17} className="shrink-0 text-[#41675d]" aria-hidden="true" />
