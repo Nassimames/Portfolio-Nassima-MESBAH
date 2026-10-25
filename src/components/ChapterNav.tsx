@@ -28,6 +28,7 @@ const chapterIcons: Record<string, LucideIcon> = {
   profil: User,
   parcours: Briefcase,
   projets: FolderKanban,
+  "personal-projects": Code2,
   certifs: Award,
   stack: Code2,
   now: Sparkles,

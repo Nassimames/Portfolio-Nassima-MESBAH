@@ -10,7 +10,7 @@ export function ContactChapter() {
   return (
     <section id="contact" className="border-t border-line bg-ink content-offset py-24 text-paper">
       <div className="max-w-5xl">
-        <p className="chapter-number text-paper/20">06</p>
+        <p className="chapter-number text-paper/20">08</p>
         <h2 className="font-display text-4xl md:text-5xl">{ui.sectionContact}</h2>
         <p className="mt-4 max-w-xl text-paper/70">{ui.contactIntro}</p>
 

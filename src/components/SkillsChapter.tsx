@@ -9,7 +9,7 @@ export function SkillsChapter() {
   return (
     <section id="stack" className="border-t border-line content-offset py-24">
       <div className="max-w-5xl">
-        <p className="chapter-number">05</p>
+        <p className="chapter-number">06</p>
         <h2 className="font-display text-4xl md:text-5xl">{ui.sectionStack}</h2>
         <p className="mt-4 text-ink-soft">{ui.skillsIntro}</p>
 

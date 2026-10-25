@@ -37,12 +37,89 @@ export type Project = {
   imageLabels?: string[];
 };
 
+export type PersonalProjectFeature = {
+  icon: "products" | "zones" | "orders" | "inventory" | "analytics";
+  title: string;
+  description: string;
+};
+
+export type PersonalProjectStage = {
+  icon:
+    | "github"
+    | "azure-pipelines"
+    | "container-registry"
+    | "app-service"
+    | "browser"
+    | "node-api"
+    | "sqlite";
+  title: string;
+  description: string;
+};
+
+export type PersonalProjectDetails = {
+  viewDetails: string;
+  devopsTitle: string;
+  deploymentStatus: string;
+  deploymentStages: PersonalProjectStage[];
+  containerTitle: string;
+  containerization: string[];
+  cloudTitle: string;
+  azureDeployment: string[];
+  automationTitle: string;
+  automationStatus: string;
+  ciCdAutomation: string[];
+  applicationArchitectureTitle: string;
+  applicationArchitectureCaption: string;
+  applicationStages: PersonalProjectStage[];
+  containerLayer: string;
+  containerLayerDescription: string;
+  featuresTitle: string;
+  features: string[];
+  qualityTitle: string;
+  quality: string[];
+  futureTitle: string;
+  futureImprovements: string[];
+};
+
+export type PersonalProject = {
+  id: string;
+  title: string;
+  category: string;
+  subtitle: string;
+  status?: string;
+  description: string;
+  preview:
+    | {
+        kind: "delivery-zones";
+        caption: string;
+      }
+      | {
+        kind: "atelier-store";
+        caption: string;
+        storePreview: {
+          label: string;
+          product: string;
+          action: string;
+          categories: string[];
+        };
+      };
+  features?: PersonalProjectFeature[];
+  highlights?: string[];
+  details?: PersonalProjectDetails;
+  stack: string[];
+  links: {
+    demo?: string;
+    source: string;
+  };
+};
+
 export type Certification = {
   title: string;
   issuer: string;
   date?: string;
   verifyUrl?: string;
   file: string;
+  skills?: string[];
 };
 
 export type Education = {
@@ -91,11 +168,17 @@ export type SiteContent = {
     educationTitle: string;
     experienceIntro: string;
     projectsIntro: string;
+    personalProjectsIntro: string;
+    personalProjectFeatures: string;
+    technologyStack: string;
+    liveDemo: string;
+    viewSourceCode: string;
     certificationsIntro: string;
     skillsIntro: string;
     contactIntro: string;
     viewCert: string;
     verify: string;
+    skillsCovered: string;
     send: string;
     namePlaceholder: string;
     emailPlaceholder: string;
@@ -112,6 +195,7 @@ export type SiteContent = {
     sectionProfile: string;
     sectionJourney: string;
     sectionProjects: string;
+    sectionPersonalProjects: string;
     sectionCerts: string;
     sectionStack: string;
     sectionNow: string;
@@ -121,7 +205,6 @@ export type SiteContent = {
     phoneLabel: string;
     githubLabel: string;
     nowEyebrow: string;
-    nowTitle: string;
     nowIntro: string;
     nowPathTitle: string;
     nowCompleted: string;
@@ -130,12 +213,21 @@ export type SiteContent = {
     nowBlazorStatus: string;
     nowBlazorFocus: string;
     nowBlazorCta: string;
+    nowDevopsTitle: string;
+    nowDevopsDescription: string;
+    nowDockerLabsTitle: string;
+    nowDockerLabsPlatform: string;
+    nowDockerLabsFormat: string;
+    nowDockerLabsAvailability: string;
+    nowDockerLabsFocus: string;
+    nowDockerLabsCta: string;
   };
   chapters: Chapter[];
   chapterReactions: Record<string, ChapterReaction>;
   education: Education[];
   experiences: Experience[];
   projects: Project[];
+  personalProjects: PersonalProject[];
   certifications: Certification[];
   skillGroups: { title: string; items: string[] }[];
 };

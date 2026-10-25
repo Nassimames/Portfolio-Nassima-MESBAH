@@ -8,6 +8,8 @@ import { useActiveChapter } from "@/hooks/useActiveChapter";
 export function GuideAvatar() {
   const { profile, chapterReactions } = useContent();
   const active = useActiveChapter();
+  if (active === "personal-projects") return null;
+
   const reaction = chapterReactions[active] ?? chapterReactions.cover;
   const isWelcome = active === "cover";
 

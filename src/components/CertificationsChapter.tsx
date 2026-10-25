@@ -10,7 +10,7 @@ export function CertificationsChapter() {
   return (
     <section id="certifs" className="border-t border-line bg-paper-dark/40 content-offset py-24">
       <div className="max-w-5xl">
-        <p className="chapter-number">04</p>
+        <p className="chapter-number">05</p>
         <h2 className="font-display text-4xl md:text-5xl">{ui.sectionCerts}</h2>
         <p className="mt-4 text-ink-soft">{ui.certificationsIntro}</p>
 
@@ -36,6 +36,16 @@ export function CertificationsChapter() {
                 </div>
                 <FileText size={20} className="shrink-0 text-ink-muted" />
               </div>
+
+              {cert.skills && cert.skills.length > 0 && (
+                <ul className="mt-4 flex flex-wrap gap-2" aria-label={ui.skillsCovered}>
+                  {cert.skills.map((skill) => (
+                    <li key={skill}>
+                      <span className="tag text-[10px]">{skill}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
 
               <div className="mt-5 flex flex-wrap gap-3">
                 <a

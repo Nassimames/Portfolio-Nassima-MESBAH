@@ -2,6 +2,7 @@ import { HeroCover } from "@/components/HeroCover";
 import { ProfileChapter } from "@/components/ProfileChapter";
 import { ExperienceChapter } from "@/components/ExperienceChapter";
 import { ProjectsChapter } from "@/components/ProjectsChapter";
+import { PersonalProjectsChapter } from "@/components/PersonalProjectsChapter";
 import { CertificationsChapter } from "@/components/CertificationsChapter";
 import { SkillsChapter } from "@/components/SkillsChapter";
 import { NowChapter } from "@/components/NowChapter";
@@ -14,6 +15,7 @@ export default function Home() {
       <ProfileChapter />
       <ExperienceChapter />
       <ProjectsChapter />
+      <PersonalProjectsChapter />
       <CertificationsChapter />
       <SkillsChapter />
       <NowChapter />
